@@ -14,7 +14,7 @@
             <img src="./images/logoGameHub.webp" alt="Logo de GameHub">
         </div>
         <div class="logOPT">
-            <button class="logIN">Connexion</button>
+            <a href="./loginPage/loginPage.php"><button class="logIN">Connexion</button></a>
             <button class="register">Inscription</button>
         </div>
     </nav>

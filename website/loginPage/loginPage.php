@@ -13,7 +13,7 @@
             <img src="../images/logoGameHub.webp" alt="Logo de GameHub">
         </div>
         <div class="logOPT">
-            <button class="cancel">Annuler</button>
+            <a href="../index.php"><button class="cancel">Annuler</button></a>
         </div>
     </nav>
 </header>
