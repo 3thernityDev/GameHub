@@ -46,19 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+function logOut()
+{
+    session_destroy();
+    header("Location: ../loginPage/loginPage.php"); // Redirect after logout
+    exit();
+}
 
-                                function logOut()
-                                {
-                                    session_destroy();
-                                    header("Location: ../loginPage/loginPage.php"); // Redirect after logout
-                                    exit();
-                                }
-
-                                // Check if the logout request is made
-                                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
-                                    logOut();
-                                }
-
+// Check if the logout request is made
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    logOut();
+}
 ?>
 
 <!DOCTYPE html>
@@ -76,13 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="logo">
             <img src="../images/logoGameHub.webp" alt="Logo de GameHub">
         </div>
-        <div class="userInfo">
-            <p><?php echo htmlspecialchars($_SESSION['username']); ?></p>
-            <form method="post" style="display:inline;">
-                <button type="submit" name="logout" style="background:none; border:none; cursor:pointer;">
-                    <i class="fa-solid fa-door-open"></i>
-                </button>
-            </form>
+        <div class="logOPT">
+            <a href="../index.php"><button class="cancel">Annuler</button></a>
         </div>
     </nav>
 </header>
