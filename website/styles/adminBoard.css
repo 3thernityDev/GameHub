@@ -80,6 +80,13 @@ button {
     padding: 1rem;
     border-radius: 5px;
 }
+.gameControl {
+    background-color: var(--nav-bg-color);
+    color: var(--btn-text-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
 
 /* Styles pour le tableau */
 table {

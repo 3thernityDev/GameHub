@@ -61,6 +61,7 @@ function fetchUsers()
         <h1>Bienvenue dans le panneau d'administration</h1>
         <div class="cardContainer">
             <div class="userControl">
+                <h2>Gestion des utilisateurs</h2>
                 <table>
                     <thead>
                         <tr>
@@ -68,6 +69,36 @@ function fetchUsers()
                             <th>Nom d'utilisateur</th>
                             <th>Admin</th>
                             <th>Actions</th> <!-- Colonne Actions -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $users = fetchUsers();
+                        foreach ($users as $user): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($user['id']); ?></td>
+                                <td><?php echo htmlspecialchars($user['username']); ?></td>
+                                <td><?php echo htmlspecialchars($user['admin'] ? 'Oui' : 'Non'); ?></td>
+                                <td>
+                                    <!-- Bouton de modification -->
+                                    <a href="../editPage/editUser.php?id=<?php echo $user['id']; ?>" class="editButton"><i class="fa-solid fa-pen"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="gameControl">
+                <h2>Gestion des Jeux</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom du jeux</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Studio</th>
+                            <th>Modifier</th>
                         </tr>
                     </thead>
                     <tbody>
