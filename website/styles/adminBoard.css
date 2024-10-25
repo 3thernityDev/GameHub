@@ -51,7 +51,7 @@ button {
     transition: background-color 0.3s ease;
     color: var(
         --btn-text-color
-    ); /* Utilisation de la variable pour la couleur du texte */
+    ); 
 }
 
 .userInfo {
@@ -65,4 +65,51 @@ button {
 
 .userInfo .fa-door-open {
     color: var(--btn-text-color-red);
+}
+
+.adminContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.userControl {
+    background-color: var(--nav-bg-color);
+    color: var(--btn-text-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: var(--nav-bg-color);
+    color: var(--btn-text-color);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    th,
+    td {
+        padding: 10px;
+    }
 }
