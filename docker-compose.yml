@@ -1,0 +1,31 @@
+services:
+    apache:
+        build: .
+        restart: always
+        container_name: apache_eval
+        ports:
+            - '8787:80'
+        volumes:
+            - ./website:/var/www/html
+    db:
+        image: mariadb:latest
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: n&3@3-4DN_.e
+            MYSQL_DATABASE: backenddocker
+        ports:
+            - "3309:3306"
+        volumes:
+            - db_data:/var/lib/mysql
+    phpmyadmin:
+        image: phpmyadmin:latest
+        restart: always
+        ports:
+            - 8888:80
+        environment:
+            MYSQL_USERNAME: root
+            MYSQL_ROOT_PASSWORD: n&3@3-4DN_.e
+            UPLOAD_LIMIT: 10G
+
+volumes:
+    db_data:
