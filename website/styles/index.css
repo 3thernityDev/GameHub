@@ -1,0 +1,123 @@
+/* Déclaration des variables CSS */
+:root {
+    --nav-bg-color: #1f2e40; /* Couleur de fond de la navbar */
+    --btn-login-bg: #23a1d8; /* Couleur du bouton "Connexion" */
+    --btn-login-bg-hover: #1c81a6; /* Couleur au survol du bouton "Connexion" */
+    --btn-register-bg: #4caf50; /* Couleur du bouton "Inscription" */
+    --btn-register-bg-hover: #388e3c; /* Couleur au survol du bouton "Inscription" */
+    --btn-text-color: #fff; /* Couleur du texte des boutons */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--nav-bg-color); /* Utilisation de la variable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 150px; /* Ajuster la taille du logo */
+}
+
+/* Buttons styling */
+.logOPT {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(
+        --btn-text-color
+    ); /* Utilisation de la variable pour la couleur du texte */
+}
+
+/* Connexion button */
+.logIN {
+    background-color: var(--btn-login-bg); /* Utilisation de la variable */
+}
+
+.logIN:hover {
+    background-color: var(
+        --btn-login-bg-hover
+    ); /* Utilisation de la variable */
+}
+
+/* Inscription button */
+.register {
+    background-color: var(--btn-register-bg); /* Utilisation de la variable */
+}
+
+.register:hover {
+    background-color: var(
+        --btn-register-bg-hover
+    ); /* Utilisation de la variable */
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 20px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.8),
+        rgba(240, 240, 240, 0.8)
+    );
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+
+.title h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--nav-bg-color);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.title p {
+    font-size: 1.5rem;
+    color: #666;
+    text-align: center;
+}
+
+.title h1 {
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
