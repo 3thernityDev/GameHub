@@ -9,6 +9,13 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['user_id']) || !isset($_SE
 function logOut()
 {
     session_destroy();
+    header("Location: ../loginPage/loginPage.php"); // Redirect after logout
+    exit();
+}
+
+// Check if the logout request is made
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    logOut();
 }
 ?>
 
@@ -31,16 +38,17 @@ function logOut()
             </div>
             <div class="userInfo">
                 <p><?php echo htmlspecialchars($_SESSION['username']); ?></p>
-                <i class="fa-solid fa-door-open" onclick=logOut();></i>
+                <form method="post" style="display:inline;">
+                    <button type="submit" name="logout" style="background:none; border:none; cursor:pointer;">
+                        <i class="fa-solid fa-door-open"></i>
+                    </button>
+                </form>
             </div>
         </nav>
     </header>
 
     <div class="adminContent">
         <h1>Bienvenue dans le panneau d'administration</h1>
-        <div class="cardContainer">
-
-        </div>
     </div>
 </body>
 

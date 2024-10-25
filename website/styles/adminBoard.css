@@ -59,6 +59,8 @@ button {
     display: flex;
     gap: 5px;
     font-size: large;
+    justify-content: center;
+    align-items: center;
 }
 
 .userInfo .fa-door-open {
