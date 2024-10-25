@@ -1,0 +1,74 @@
+/* Déclaration des variables CSS */
+:root {
+    --nav-bg-color: #1f2e40; /* Couleur de fond de la navbar */
+    --btn-login-bg: #23a1d8; /* Couleur du bouton "Connexion" */
+    --btn-login-bg-hover: #1c81a6; /* Couleur au survol du bouton "Connexion" */
+    --btn-register-bg: #4caf50; /* Couleur du bouton "Inscription" */
+    --btn-register-bg-hover: #388e3c; /* Couleur au survol du bouton "Inscription" */
+    --btn-text-color: #fff; /* Couleur du texte des boutons */
+    --btn-text-color-red: red; /* Couleur du texte des boutons */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--nav-bg-color); /* Utilisation de la variable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 150px; /* Ajuster la taille du logo */
+}
+
+/* Buttons styling */
+.logOPT {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(--btn-text-color);
+}
+
+.userInfo {
+    color: var(--btn-text-color);
+    display: flex;
+    gap: 5px;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo .fa-door-open {
+    color: var(--btn-text-color-red);
+}
+
+.profilContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
