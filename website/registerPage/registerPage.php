@@ -4,43 +4,43 @@ ob_start(); // Démarrer la mise en tampon de sortie
 // Inclure le fichier de connexion à la base de données
 include '../database/bdd.php'; // Assurez-vous que le chemin est correct
 
-// Fonction pour le login
-function login($username, $password)
+// Fonction pour l'inscription d'un utilisateur
+function register($username, $password)
 {
     global $db;
+
     $query = "SELECT * FROM user WHERE username = :username";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $existingUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user) {
-        if (password_verify($password, $user['password'])) {
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['admin'] = $user['admin'];
+    if ($existingUser) {
+        return "Ce pseudo est déjà utilisé.";
+    }
 
-            if ($user['admin'] === 1) {
-                header("Location: ../adminBoard/adminBoard.php");
-            } else {
-                header("Location: ../userBoard/userBoard.php");
-            }
-            exit();
-        } else {
-            return "Mot de passe incorrect.";
-        }
+    // Hachage du mot de passe
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insertion de l'utilisateur dans la base de données
+    $query = "INSERT INTO user (username, password, admin) VALUES (:username, :password, 0)";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $hashedPassword);
+    if ($stmt->execute()) {
+        return "Inscription réussie ! Vous pouvez maintenant vous connecter.";
+        header("Location: ../loginPage/loginPage.php");
     } else {
-        return "Aucun utilisateur trouvé avec ce pseudo.";
+        return "Erreur lors de l'inscription. Veuillez réessayer.";
     }
 }
 
-// Traitement du formulaire de connexion
+// Traitement du formulaire d'inscription
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['Pseudo'];
-    $password = $_POST['Password'];
-    $message = login($username, $password);
+    $username = $_POST['Pseudo'] ?? '';
+    $password = $_POST['Password'] ?? '';
+    $message = register($username, $password);
 }
 ?>
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/loginPage.css">
-    <title>GameHub | Se connecter</title>
+    <title>GameHub | Inscription</title>
 </head>
 
 <body>
@@ -68,14 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="formContainer">
         <form action="" method="post">
-            <h1>Connexion</h1>
+            <h1>Inscription</h1>
             <label for="Pseudo">Votre pseudo:</label>
             <input type="text" name="Pseudo" placeholder="Votre nom d'utilisateur" required>
             <label for="Password">Votre mot de passe:</label>
             <input type="password" name="Password" placeholder="Votre mot de passe" required>
-            <input type="submit" value="Connexion">
+            <input type="submit" value="S'inscrire">
         </form>
-        <p><?= htmlspecialchars($message ?? '') ?></p> <!-- Utilisez htmlspecialchars ici -->
+        <p style="color: red;"><?= htmlspecialchars($message) ?? '' ?></p>
     </div>
 </body>
 

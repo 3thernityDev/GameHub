@@ -15,7 +15,7 @@
         </div>
         <div class="logOPT">
             <a href="./loginPage/loginPage.php"><button class="logIN">Connexion</button></a>
-            <button class="register">Inscription</button>
+            <a href="./registerPage/registerPage.php"><button class="register">Inscription</button></a>
         </div>
     </nav>
 </header>
