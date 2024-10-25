@@ -11,7 +11,7 @@ try {
     $db = new PDO("mysql:host=$host;port=$port;dbname=$dbname;", $user, $pass);
     // Configurer PDO pour afficher les erreurs
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connexion réussie !";
+    // echo "Connexion réussie !";
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
