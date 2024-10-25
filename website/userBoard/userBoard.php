@@ -52,7 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     <div class="profilContent">
         <h1>Bienvenue sur ton profil !</h1>
         <div class="cardContainer">
+            <div class="card">
+                <h3><?php echo $_SESSION['username'] ?></h3>
+                <div class="favoriteGame">
+                    <h4>Jeux favoris 🌟</h2>
+                        <div class="top3Games">
 
+                        </div>
+                </div>
+                <div class="possedGame">
+                    <h4>Jeux posseder</h2>
+                </div>
+                <div class="socialMedia">
+                    <h4>Réseaux Sociaux</h2>
+                </div>
+            </div>
         </div>
     </div>
 </body>
