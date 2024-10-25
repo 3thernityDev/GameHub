@@ -84,3 +84,54 @@ button {
         --btn-register-bg-hover
     ); /* Utilisation de la variable */
 }
+
+/* Form Style */
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--nav-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    gap: 1rem;
+    color: whitesmoke;
+    width: 300px;
+}
+
+.formContainer input[type="text"] {
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+.formContainer input[type="password"] {
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+
+.formContainer input[type="submit"] {
+    background-color: var(--btn-login-bg);
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+    font-size: large;
+}
+
+.formContainer input[type="text"]:focus {
+    border-bottom: var(--btn-login-bg) solid 5px;
+}
+.formContainer input[type="password"]:focus {
+    border-bottom: var(--btn-login-bg) solid 5px;
+}

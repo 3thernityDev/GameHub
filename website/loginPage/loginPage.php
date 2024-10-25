@@ -21,7 +21,12 @@
 <body>
     <div class="formContainer">
         <form action="">
-
+            <h1>Connexion</h1>
+            <label for="Pseudo">Votre pseudo:</label>
+            <input type="text" name="Pseudo" placeholder="Votre nom d'utilisateur" require>
+            <label for="password">Votre mot de passe:</label>
+            <input type="password" name="Password" placeholder="Votre mot de passe" require>
+            <input type="submit" value="Connexion">
         </form>
     </div>
 </body>
