@@ -28,8 +28,8 @@ function register($username, $password)
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $hashedPassword);
     if ($stmt->execute()) {
-        return "Inscription réussie ! Vous pouvez maintenant vous connecter.";
         header("Location: ../loginPage/loginPage.php");
+        return "Inscription réussie ! Vous pouvez maintenant vous connecter.";
     } else {
         return "Erreur lors de l'inscription. Veuillez réessayer.";
     }
