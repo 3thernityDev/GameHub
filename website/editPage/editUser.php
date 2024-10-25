@@ -45,6 +45,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "Erreur lors de la mise à jour des informations. Veuillez réessayer.";
     }
 }
+
+
+                                function logOut()
+                                {
+                                    session_destroy();
+                                    header("Location: ../loginPage/loginPage.php"); // Redirect after logout
+                                    exit();
+                                }
+
+                                // Check if the logout request is made
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+                                    logOut();
+                                }
+
 ?>
 
 <!DOCTYPE html>

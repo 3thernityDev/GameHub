@@ -49,9 +49,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    color: var(
-        --btn-text-color
-    ); 
+    color: var(--btn-text-color);
 }
 
 .userInfo {
@@ -112,4 +110,13 @@ td {
     td {
         padding: 10px;
     }
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.editButton {
+    color: var(--btn-register-bg-hover);
 }

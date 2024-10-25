@@ -80,7 +80,7 @@ function fetchUsers()
                                 <td><?php echo htmlspecialchars($user['admin'] ? 'Oui' : 'Non'); ?></td>
                                 <td>
                                     <!-- Bouton de modification -->
-                                    <a href="../editPage/editUser.php?id=<?php echo $user['id']; ?>" class="editButton">Modifier</a>
+                                    <a href="../editPage/editUser.php?id=<?php echo $user['id']; ?>" class="editButton"><i class="fa-solid fa-pen"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
