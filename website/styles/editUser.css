@@ -1,0 +1,155 @@
+/* Déclaration des variables CSS */
+:root {
+    --nav-bg-color: #1f2e40; /* Couleur de fond de la navbar */
+    --btn-login-bg: #23a1d8; /* Couleur du bouton "Connexion" */
+    --btn-login-bg-hover: #1c81a6; /* Couleur au survol du bouton "Connexion" */
+    --btn-register-bg: #4caf50; /* Couleur du bouton "Inscription" */
+    --btn-register-bg-hover: #388e3c; /* Couleur au survol du bouton "Inscription" */
+    --btn-text-color: #fff; /* Couleur du texte des boutons */
+    --btn-cancel-bg: red; /* Couleur du bouton annuler*/
+    --btn-cancel-bg-hover: rgb(201, 15, 15);
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--nav-bg-color); /* Utilisation de la variable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 150px; /* Ajuster la taille du logo */
+}
+
+/* Buttons styling */
+.logOPT {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(
+        --btn-text-color
+    ); /* Utilisation de la variable pour la couleur du texte */
+}
+
+/* Connexion button */
+.logIN {
+    background-color: var(--btn-login-bg); /* Utilisation de la variable */
+}
+
+.cancel {
+    background-color: red;
+}
+
+.cancel:hover {
+    background-color: var(--btn-cancel-bg-hover);
+}
+
+.logIN:hover {
+    background-color: var(
+        --btn-login-bg-hover
+    ); /* Utilisation de la variable */
+}
+
+/* Inscription button */
+.register {
+    background-color: var(--btn-register-bg); /* Utilisation de la variable */
+}
+
+.register:hover {
+    background-color: var(
+        --btn-register-bg-hover
+    ); /* Utilisation de la variable */
+}
+
+/* Form Style */
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--nav-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    gap: 1rem;
+    color: whitesmoke;
+    width: 300px;
+}
+
+.formContainer input[type="text"] {
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+.formContainer input[type="password"] {
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+
+.formContainer button {
+    background-color: var(--btn-login-bg);
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+    font-size: large;
+}
+
+.formContainer input[type="text"]:focus {
+    border-bottom: var(--btn-login-bg) solid 5px;
+}
+.formContainer input[type="password"]:focus {
+    border-bottom: var(--btn-login-bg) solid 5px;
+}
+
+.userInfo {
+    color: var(--btn-text-color);
+    display: flex;
+    gap: 5px;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo .fa-door-open {
+    color: var(--btn-cancel-bg);
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}

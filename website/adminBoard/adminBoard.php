@@ -67,6 +67,7 @@ function fetchUsers()
                             <th>ID</th>
                             <th>Nom d'utilisateur</th>
                             <th>Admin</th>
+                            <th>Actions</th> <!-- Colonne Actions -->
                         </tr>
                     </thead>
                     <tbody>
@@ -77,6 +78,10 @@ function fetchUsers()
                                 <td><?php echo htmlspecialchars($user['id']); ?></td>
                                 <td><?php echo htmlspecialchars($user['username']); ?></td>
                                 <td><?php echo htmlspecialchars($user['admin'] ? 'Oui' : 'Non'); ?></td>
+                                <td>
+                                    <!-- Bouton de modification -->
+                                    <a href="../editPage/editUser.php?id=<?php echo $user['id']; ?>" class="editButton">Modifier</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
