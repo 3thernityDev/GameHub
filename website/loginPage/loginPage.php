@@ -21,6 +21,7 @@ function login($username, $password)
                 $_SESSION['user_id'] = $user['id'];
             }
             $_SESSION['username'] = $user['username'];
+            $_SESSION['admin'] = $user['admin'];
             if ($user['admin'] === 1) {
                 header("Location: ../adminBoard/adminBoard.php");
             } else {
