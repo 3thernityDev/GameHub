@@ -21,7 +21,11 @@ function login($username, $password)
                 $_SESSION['user_id'] = $user['id'];
             }
             $_SESSION['username'] = $user['username'];
-            header("Location: ../adminBoard/adminBoard.php");
+            if ($user['admin'] === 1) {
+                header("Location: ../adminBoard/adminBoard.php");
+            } else {
+                header("Location: ../userBoard/userBoard.php");
+            }
             exit();
         } else {
             return "Mot de passe incorrect.";
